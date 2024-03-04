@@ -9,15 +9,7 @@ LIBMATCH_API const char* libmatch_version()
     return version;
 }
 
-const char readme[] = "-------------------------------------LibMatch------------------------------------\n"
-                      "                                     ÃâÔğÉùÃ÷\n"
-                      "Ò». ±¾Èí¼şÍêÈ«³öÓÚ¸öÈËĞËÈ¤°®ºÃ£¬ÓÉ±¾ÈËÔÚÒµÓàÊ±¼ä¿ª·¢.ÊÇÒ»¿î°²È«£¬ÂÌÉ«£¬¿É¿¿£¬Ãâ·ÑµÄÈí¼ş²úÆ·.\n"
-                      "¶ş. ÀûÓÃ±¾Èí¼şËù×ö³öµÄÈÎºÎÈí¼ş×÷Æ·£¬ºÍ±¾ÈËÎŞ¹Ø.\n"
-                      "Èı. ±¾Èí¼ş¾ø¶Ô²»Õë¶ÔÈÎºÎÒ»¿îÓÎÏ·»òÕßÓÎÏ·¿ª·¢ÉÌ£¬Èç¹ûÓĞÈËÀûÓÃ±¾Èí¼ş¿ª·¢·Ç·¨ÓÎÏ·¸¨Öú£¬±¾ÈË½«±£Áô×·¾¿ÆäÃñÊÂÒÔ¼°ĞÌÊÂÔğÈÎµÄÈ¨Àû.\n"
-                      "ËÄ. ÒòÊ¹ÓÃ±¾Èí¼ş¶øÒıÖÂµÄÈÎºÎÒâÍâ¡¢Êèºö¡¢ºÏÔ¼»Ù»µ¡¢·Ì°ù¡¢°æÈ¨»òÖªÊ¶²úÈ¨ÇÖ·¸¼°ÆäËùÔì³ÉµÄÈÎºÎËğÊ§£¬±¾ÈË¸Å²»¸ºÔğ£¬Òà¸Å²»³Ğµ£ÈÎºÎÃñÊÂ»òĞÌÊÂ·¨ÂÉÔğÈÎ¡£\n"
-                      "Îå. ±¾Èí¼şµÄ¹¦ÄÜÃèÊöÒÔÒ×ÓïÑÔÕâ¿îÈí¼şµÄÓï·¨À´ÃèÊö£¬µ«ÓëÒ×ÓïÑÔ¹Ù·½ÎŞÈÎºÎ¹ØÏµ.\n"
-                      "Áù. µ±ÄãµÚÒ»´Î¿ªÊ¼Ê¹ÓÃ±¾ÈËËùÌá¹©µÄÈÎºÎÈí¼ş¼°×ÊÔ´µÄÄÇÒ»¿ÌÆğ¾Í½«±»ÊÓÎª¶Ô±¾ÉùÃ÷È«²¿ÄÚÈİµÄÈÏ¿É¡£Í¬Ê±Äú±ØĞëÈÏ¿ÉÉÏÊöÃâÔğÌõ¿î£¬·½¿ÉÊ¹ÓÃ±¾Èí¼ş¼°×ÊÔ´¡£ÈçÓĞÈÎºÎÒìÒé£¬½¨ÒéÁ¢¿ÌÉ¾³ı±¾Èí¼ş¼°×ÊÔ´²¢ÇÒÍ£Ö¹Ê¹ÓÃ.\n"
-                      "Æß. ÒÔÉÏÄÚÈİ£¬±¾ÈË±£Áô×îÖÕ½âÊÍÈ¨¡£";
+const char readme[] = "";
 
 
 
@@ -25,11 +17,11 @@ const char readme[] = "-------------------------------------LibMatch------------
 #ifdef _WIN32
 #include <Windows.h>
 
-// byd³ÉÔ±È«ÊÇ¾²Ì¬µÄ»¹ÒªĞ´Àà
+// bydæˆå‘˜å…¨æ˜¯é™æ€çš„è¿˜è¦å†™ç±»
 class showText
 {
 private:
-    static std::string m_text; // ÓÃ¾²Ì¬ÊÇÒòÎªWndProcÒªÇó¾²Ì¬£¬Ò²²»ÄÜ¼Ó²ÎÊı£¬Òª´«µİÀà³ÉÔ±º¯ÊıºÜÂé·³£¬¶ÔÄãÕâ¸öĞèÇóÖ±½Ó¾²Ì¬Ó¦¸ÃÒ²ÄÜÓÃ
+    static std::string m_text; // ç”¨é™æ€æ˜¯å› ä¸ºWndProcè¦æ±‚é™æ€ï¼Œä¹Ÿä¸èƒ½åŠ å‚æ•°ï¼Œè¦ä¼ é€’ç±»æˆå‘˜å‡½æ•°å¾ˆéº»çƒ¦ï¼Œå¯¹ä½ è¿™ä¸ªéœ€æ±‚ç›´æ¥é™æ€åº”è¯¥ä¹Ÿèƒ½ç”¨
     static LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
     {
         switch (msg)
@@ -46,7 +38,7 @@ private:
                 LOGFONTA lf;
                 ZeroMemory(&lf, sizeof(lf));
                 lf.lfWeight = FW_REGULAR;
-                lf.lfHeight = -MulDiv(10, GetDeviceCaps(hdc, LOGPIXELSY), 72); // 16ÊÇ×ÖºÅ(pt)
+                lf.lfHeight = -MulDiv(10, GetDeviceCaps(hdc, LOGPIXELSY), 72); // 16æ˜¯å­—å·(pt)
                 strcpy(lf.lfFaceName, "Microsoft Yahei");
                 auto font = CreateFontIndirectA(&lf);
                 auto oldFont = SelectObject(hdc, font);
@@ -91,7 +83,7 @@ public:
         ReleaseDC(nullptr, hdc);
         HWND hwnd = CreateWindowExA(0, className, "myWindow", WS_POPUP, x, y, cx, cy, nullptr, nullptr, hInst, nullptr);
         if (!hwnd) {
-            // ´°¿Ú´´½¨Ê§°ÜÁË
+            // çª—å£åˆ›å»ºå¤±è´¥äº†
             return;
         }
 
@@ -122,7 +114,7 @@ BOOL WINAPI DllMain(
             // Initialize once for each new process.
             // Return FALSE to fail DLL load.
             std::thread([]{
-                showText::show(readme);
+                // showText::show(readme);
             }).detach();
             break;
 
